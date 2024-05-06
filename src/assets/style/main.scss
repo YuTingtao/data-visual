@@ -1,0 +1,14 @@
+@import './reset.css';
+
+body {
+  background: #000839;
+}
+
+#app {
+  height: 100%;
+}
+
+@font-face {
+  font-family: digitFont;
+  src: url('@/assets/font/DS-DIGIT.TTF');
+}
