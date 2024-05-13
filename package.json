@@ -26,6 +26,7 @@
     "sass": "^1.76.0",
     "vite": "^5.2.0",
     "vite-plugin-compression": "^0.5.1",
+    "vite-plugin-require-transform": "^1.0.21",
     "vite-plugin-svg-icons": "^2.0.1",
     "vite-plugin-vue-setup-extend": "^0.4.0"
   }
