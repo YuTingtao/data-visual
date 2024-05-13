@@ -1,51 +1,34 @@
 <template>
-  <echarts ref="chartRef" :option="option" :autoresize="true" @click="handleClick"></echarts>
+  <echarts ref="chartRef" :option="option" :autoresize="true" @geoselectchanged="onSelectChange" @dblclick="onDblclick"></echarts>
 </template>
 
 <script setup>
-import { ref, reactive } from 'vue'
+import { ref, reactive, onMounted, nextTick } from 'vue'
 import { registerMap } from 'echarts/core'
 import china from '@/assets/map/china.json'
+import provinces from '@/assets/map/province/index.js'
 
 const chartRef = ref()
 
 // 注册中国地图
 registerMap('china', china)
+provinces.forEach(item => {
+  registerMap(item.name, item.data)
+})
 
 // 生成随机数
 function getRrandom() {
-  return Math.round(Math.random() * 10000)
+  return Math.round(Math.random() * 1000)
 }
 
+// 模拟点位数据
 const data = [
-  { name: '北京', value: getRrandom() },
-  { name: '上海', value: getRrandom() },
-  { name: '广州', value: getRrandom() },
-  { name: '深圳', value: getRrandom() },
-  { name: '杭州', value: getRrandom() },
+  { name: '北京', value: [116.46, 39.92, getRrandom()] },
+  { name: '上海', value: [121.48, 31.22, getRrandom()] },
+  { name: '广州', value: [113.23, 23.16, getRrandom()] },
+  { name: '深圳', value: [114.07, 22.62, getRrandom()] },
+  { name: '杭州', value: [120.19, 30.26, getRrandom()] },
 ]
-
-const geoCoordMap = {
-  北京: [116.46, 39.92],
-  上海: [121.48, 31.22],
-  广州: [113.23, 23.16],
-  深圳: [114.07, 22.62],
-  杭州: [120.19, 30.26],
-}
-
-function convertData(data) {
-  const res = [];
-  for (let i = 0; i < data.length; i++) {
-    let geoCoord = geoCoordMap[data[i].name];
-    if (geoCoord) {
-      res.push({
-        name: data[i].name,
-        value: geoCoord.concat(data[i].value)
-      });
-    }
-  }
-  return res;
-}
 
 const option = ref({
   tooltip: {
@@ -59,6 +42,8 @@ const option = ref({
     map: 'china',
     roam: false, // 不开启缩放和平移
     zoom: 1.0, // 视角缩放比例
+    left: '6%',
+    right: '6%',
     label: {
       show: false,
       color: '#fff',
@@ -73,7 +58,7 @@ const option = ref({
     },
     emphasis: {
       itemStyle: {
-        areaColor: 'rgba(43, 145, 183, 1)',
+        areaColor: 'rgba(33, 205, 231, 1)',
       },
       label: {
         show: true,
@@ -86,7 +71,7 @@ const option = ref({
         color: '#fff',
       },
       itemStyle: {
-        areaColor: 'rgba(43, 145, 183, 1)',
+        areaColor: 'rgba(33, 205, 231, 1)',
       },
     },
   },
@@ -99,12 +84,12 @@ const option = ref({
         brushType: 'stroke',
       },
       tooltip: {
-        show: true,
+        show: false,
       },
       label: {
         show: true,
         position: 'right',
-        formatter: '{b}',
+        formatter: '{b}{@[2]}',
         color: '#fff',
       },
       itemStyle: {
@@ -112,16 +97,27 @@ const option = ref({
       },
       emphasis: {
         itemStyle: {
-          areaColor: '#2B91B7',
+          areaColor: 'rgba(33, 205, 231, 1)',
         },
       },
-      data: convertData(data),
+      data: data,
     },
   ],
 })
 
-function handleClick(params) {
+// 地图选中状态改变，进入省级地图
+function onSelectChange(params) {
   console.log(params)
+  if (provinces.some(item => item.name == params.name)) {
+    option.value.geo.map = params.name
+    option.value.series[0].data = []
+  }
+}
+
+// 双击返回中国地图
+function onDblclick(params) {
+  option.value.geo.map = 'china'
+  option.value.series[0].data = data
 }
 </script>
 

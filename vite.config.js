@@ -7,6 +7,8 @@ import VueSetupExtend from 'vite-plugin-vue-setup-extend'
 import { createSvgIconsPlugin } from 'vite-plugin-svg-icons'
 // gzip压缩
 import viteCompression from 'vite-plugin-compression'
+// node require语法转化
+import requireTransform from 'vite-plugin-require-transform'
 // 打包分析
 import { visualizer } from 'rollup-plugin-visualizer'
 
@@ -42,6 +44,9 @@ export default defineConfig({
       symbolId: 'icon-[dir]-[name]',
       inject: 'body-last',
       customDomId: 'svg__icon__dom'
+    }),
+    requireTransform({
+      fileRegex: /.js$|.vue$/,
     }),
     // 打包分析
     // visualizer({
