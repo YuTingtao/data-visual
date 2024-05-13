@@ -42,8 +42,6 @@ const option = ref({
     map: 'china',
     roam: false, // 不开启缩放和平移
     zoom: 1.0, // 视角缩放比例
-    left: '6%',
-    right: '6%',
     label: {
       show: false,
       color: '#fff',
