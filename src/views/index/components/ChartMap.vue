@@ -1,9 +1,9 @@
 <template>
-  <echarts ref="chartRef" :option="option" :autoresize="true" @geoselectchanged="onSelectChange" @dblclick="onDblclick"></echarts>
+  <echarts ref="chartRef" :option="option" :autoresize="true" @click="onClick" @dblclick="onDblclick"></echarts>
 </template>
 
 <script setup>
-import { ref, reactive, onMounted, nextTick } from 'vue'
+import { ref, reactive } from 'vue'
 import { registerMap } from 'echarts/core'
 import china from '@/assets/map/china.json'
 import provinces from '@/assets/map/province/index.js'
@@ -103,8 +103,8 @@ const option = ref({
   ],
 })
 
-// 地图选中状态改变，进入省级地图
-function onSelectChange(params) {
+// 点击，进入省级地图
+function onClick(params) {
   console.log(params)
   if (provinces.some(item => item.name == params.name)) {
     option.value.geo.map = params.name
