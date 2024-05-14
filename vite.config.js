@@ -2,7 +2,7 @@ import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import { resolve } from 'path'
 
-import VueSetupExtend from 'vite-plugin-vue-setup-extend'
+import vueSetupExtend from 'vite-plugin-vue-setup-extend'
 // svg-icon
 import { createSvgIconsPlugin } from 'vite-plugin-svg-icons'
 // gzip压缩
@@ -35,7 +35,7 @@ export default defineConfig({
   },
   plugins: [
     vue(),
-    VueSetupExtend(),
+    vueSetupExtend(),
     viteCompression({
       threshold: 10240, // 大于10K的文件进行gzip压缩
     }),
