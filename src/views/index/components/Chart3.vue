@@ -15,7 +15,7 @@ const option = ref({
     itemHeight: 14,
     data: ['20-29岁', '30-39岁', '40-49岁', '50岁以上'],
     textStyle: {
-      color: 'rgba(255, 255, 255, .6)',
+      color: 'rgba(255, 255, 255, .7)',
     },
   },
   tooltip: {

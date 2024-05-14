@@ -36,7 +36,7 @@ const option = ref({
         alignWithLabel: true,
       },
       axisLabel: {
-        color: 'rgba(255, 255, 255, .6)',
+        color: 'rgba(255, 255, 255, .7)',
       },
       axisLine: {
         show: false,
@@ -50,7 +50,7 @@ const option = ref({
         show: true,
       },
       axisLabel: {
-        color: 'rgba(255, 255, 255, .6)',
+        color: 'rgba(255, 255, 255, .7)',
         formatter: '{value}',
       },
       axisLine: {

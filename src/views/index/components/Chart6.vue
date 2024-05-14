@@ -14,7 +14,7 @@ const option = ref({
     itemWidth: 12,
     itemHeight: 12,
     textStyle: {
-      color: 'rgba(255, 255, 255, .6)',
+      color: 'rgba(255, 255, 255, .7)',
       fontSize: 12,
     },
   },
