@@ -7,6 +7,7 @@ import { ref, reactive } from 'vue'
 import { registerMap } from 'echarts/core'
 import china from '@/assets/map/china.json'
 import provinces from '@/assets/map/province/index.js'
+console.log('中国:', china.features)
 
 const chartRef = ref()
 
