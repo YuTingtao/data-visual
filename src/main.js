@@ -8,7 +8,7 @@ import 'virtual:svg-icons-register'
 import './assets/style/main.scss'
 
 import ECharts from 'vue-echarts'
-import { use as EchartsUse } from 'echarts/core';
+import { use as EchartsUse } from 'echarts/core'
 import { CanvasRenderer } from 'echarts/renderers'
 import { BarChart, LineChart, PieChart, MapChart, EffectScatterChart } from 'echarts/charts'
 import { GridComponent, TooltipComponent, LegendComponent, GeoComponent } from 'echarts/components'
