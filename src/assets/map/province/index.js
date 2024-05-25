@@ -29,7 +29,7 @@ export default [
   {
     name: '内蒙古',
     id: '150000',
-    data: data.shanxi,
+    data: data.neimenggu,
   },
   {
     name: '辽宁',
