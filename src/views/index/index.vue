@@ -72,9 +72,9 @@ const route = useRoute()
 // autofit
 onMounted(() => {
   autofit.init({
-    dh: 1080,
     dw: 1920,
-    el: 'body',
+    dh: 1080,
+    el: '#app',
     resize: true
   })
 })
