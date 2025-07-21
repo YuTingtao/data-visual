@@ -3,52 +3,52 @@
 </template>
 
 <script setup>
-import { ref, reactive } from 'vue'
+import { ref, reactive } from 'vue';
 
-const chartRef = ref()
+const chartRef = ref();
 
-const colors = ['#1089E7', '#F57474', '#56D0E3', '#F8B448', '#8B78F6']
+const colors = ['#1089E7', '#F57474', '#56D0E3', '#F8B448', '#8B78F6'];
 const option = ref({
   grid: {
     left: '0%',
     top: '0%',
     right: '0%',
     bottom: '0%',
-    containLabel: true,
+    containLabel: true
   },
   xAxis: {
-    show: false,
+    show: false
   },
   yAxis: [
     {
       show: true,
       data: ['HTML5', 'CSS3', 'JavaScript', 'VUE', 'NODE'],
       axisLine: {
-        show: false,
+        show: false
       },
       splitLine: {
-        show: false,
+        show: false
       },
       axisTick: {
-        show: false,
+        show: false
       },
       axisLabel: {
-        color: 'rgba(255, 255, 255, .9)',
-      },
+        color: 'rgba(255, 255, 255, .9)'
+      }
     },
     {
       show: true,
       data: [702, 350, 610, 793, 664],
       axisLine: {
-        show: false,
+        show: false
       },
       axisTick: {
-        show: false,
+        show: false
       },
       axisLabel: {
-        color: 'rgba(255, 255, 255, .9)',
-      },
-    },
+        color: 'rgba(255, 255, 255, .9)'
+      }
+    }
   ],
   series: [
     {
@@ -63,16 +63,16 @@ const option = ref({
         color: function (params) {
           let len = colors.length;
           return colors[params.dataIndex % len];
-        },
+        }
       },
       label: {
         show: true,
         color: '#fff',
         position: 'inside',
-        formatter: '{c}%',
+        formatter: '{c}%'
       },
       emphasis: {
-        disabled: true,
+        disabled: true
       }
     },
     {
@@ -86,13 +86,11 @@ const option = ref({
         color: 'none',
         borderColor: '#00c1de',
         borderWidth: 1,
-        borderRadius: 7,
-      },
-    },
-  ],
-})
+        borderRadius: 7
+      }
+    }
+  ]
+});
 </script>
 
-<style lang="scss" scoped>
-
-</style>
+<style lang="scss" scoped></style>

@@ -1,12 +1,9 @@
 <template>
-  <span class="app-time">
-    {{ date.y }}年{{ date.M }}月{{ date.d }}日
-    {{ date.h }}:{{ date.m }}:{{ date.s }}
-  </span>
+  <span class="app-time"> {{ date.y }}年{{ date.M }}月{{ date.d }}日 {{ date.h }}:{{ date.m }}:{{ date.s }} </span>
 </template>
 
 <script setup>
-import { reactive } from 'vue'
+import { reactive } from 'vue';
 
 const date = reactive({
   y: null,
@@ -15,7 +12,7 @@ const date = reactive({
   h: null,
   m: null,
   s: null
-})
+});
 
 function setTime() {
   let dt = new Date();
@@ -31,10 +28,10 @@ function setTime() {
   date.m = m < 10 ? '0' + m : m;
   date.s = s < 10 ? '0' + s : s;
 }
-setTime()
+setTime();
 setInterval(() => {
   setTime();
-}, 500)
+}, 500);
 </script>
 
 <style lang="scss">

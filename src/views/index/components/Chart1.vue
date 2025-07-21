@@ -3,9 +3,9 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { ref } from 'vue';
 
-const chartRef = ref()
+const chartRef = ref();
 
 const option = ref({
   color: ['#409eff'],
@@ -14,52 +14,52 @@ const option = ref({
     top: '4%',
     right: '2%',
     bottom: '4%',
-    containLabel: true,
+    containLabel: true
   },
   tooltip: {
     trigger: 'axis',
     axisPointer: {
-      type: 'shadow',
-    },
+      type: 'shadow'
+    }
   },
   xAxis: [
     {
       type: 'category',
       data: ['旅游行业', '教育培训', '游戏行业', '医疗行业', '电商行业', '社交行业', '金融行业'],
       axisTick: {
-        alignWithLabel: true,
+        alignWithLabel: true
       },
       axisLabel: {
         color: 'rgba(255, 255, 255, .7)',
         interval: 0
       },
       axisLine: {
-        show: false,
-      },
-    },
+        show: false
+      }
+    }
   ],
   yAxis: [
     {
       type: 'value',
       axisTick: {
-        show: true,
+        show: true
       },
       axisLabel: {
         color: 'rgba(255, 255, 255, .7)',
-        formatter: '{value}',
+        formatter: '{value}'
       },
       axisLine: {
         show: true,
         lineStyle: {
-          color: 'rgba(255, 255, 255, .1)',
-        },
+          color: 'rgba(255, 255, 255, .1)'
+        }
       },
       splitLine: {
         lineStyle: {
-          color: 'rgba(255, 255, 255, .1)',
-        },
-      },
-    },
+          color: 'rgba(255, 255, 255, .1)'
+        }
+      }
+    }
   ],
   series: [
     {
@@ -81,12 +81,10 @@ const option = ref({
           ],
           global: false // 缺省为 false
         }
-      },
-    },
-  ],
-})
+      }
+    }
+  ]
+});
 </script>
 
-<style lang="scss" scoped>
-
-</style>
+<style lang="scss" scoped></style>

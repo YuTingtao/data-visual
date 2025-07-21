@@ -19,7 +19,7 @@
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^5.0.4",
-    "eslint": "^9.2.0",
+    "eslint": "^8.45.0",
     "fast-glob": "^3.3.2",
     "prettier": "^3.2.5",
     "rollup-plugin-visualizer": "^5.12.0",

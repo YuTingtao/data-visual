@@ -53,21 +53,21 @@
 </template>
 
 <script setup>
-import { ref, reactive, onMounted } from 'vue'
-import { useRouter, useRoute } from 'vue-router'
-import autofit from 'autofit.js'
-import AppPanel from './components/AppPanel.vue'
-import AppTime from './components/AppTime.vue'
-import Chart1 from './components/Chart1.vue'
-import Chart2 from './components/Chart2.vue'
-import Chart3 from './components/Chart3.vue'
-import Chart4 from './components/Chart4.vue'
-import Chart5 from './components/Chart5.vue'
-import Chart6 from './components/Chart6.vue'
-import ChartMap from './components/ChartMap.vue'
+import { ref, reactive, onMounted } from 'vue';
+import { useRouter, useRoute } from 'vue-router';
+import autofit from 'autofit.js';
+import AppPanel from './components/AppPanel.vue';
+import AppTime from './components/AppTime.vue';
+import Chart1 from './components/Chart1.vue';
+import Chart2 from './components/Chart2.vue';
+import Chart3 from './components/Chart3.vue';
+import Chart4 from './components/Chart4.vue';
+import Chart5 from './components/Chart5.vue';
+import Chart6 from './components/Chart6.vue';
+import ChartMap from './components/ChartMap.vue';
 
-const router = useRouter()
-const route = useRoute()
+const router = useRouter();
+const route = useRoute();
 
 // autofit
 onMounted(() => {
@@ -76,8 +76,8 @@ onMounted(() => {
     dh: 1080,
     el: '#app',
     resize: true
-  })
-})
+  });
+});
 </script>
 
 <style lang="scss" scoped>
@@ -107,7 +107,7 @@ onMounted(() => {
     position: absolute;
     top: -10px;
     right: 20px;
-    color: rgba(255, 255, 255, .7);
+    color: rgba(255, 255, 255, 0.7);
   }
 }
 
@@ -168,12 +168,14 @@ onMounted(() => {
 }
 
 .map-box {
+  position: relative;
   flex-shrink: 0;
   flex-grow: 1;
-  position: relative;
-  height: 786px;
-  margin-top: 15px;
-  .map-bg1, .map-bg2, .map-bg3 {
+  height: 796px;
+  margin-top: 10px;
+  .map-bg1,
+  .map-bg2,
+  .map-bg3 {
     position: absolute;
     left: 50%;
     top: 50%;

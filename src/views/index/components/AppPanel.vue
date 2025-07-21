@@ -9,17 +9,17 @@
 </template>
 
 <script setup>
-import { ref, reactive } from 'vue'
-import { useRouter, useRoute } from 'vue-router'
+import { ref, reactive } from 'vue';
+import { useRouter, useRoute } from 'vue-router';
 
-const router = useRouter()
-const route = useRoute()
+const router = useRouter();
+const route = useRoute();
 
 const props = defineProps({
   title: {
     type: [String, Number]
   }
-})
+});
 </script>
 
 <style lang="scss">
@@ -36,7 +36,8 @@ const props = defineProps({
   & + .app-panel {
     margin-top: 15px;
   }
-  &:before, &:after {
+  &:before,
+  &:after {
     content: '';
     position: absolute;
     top: 0;
