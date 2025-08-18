@@ -1,0 +1,14 @@
+import { defineStore } from 'pinia';
+
+export const useStore = defineStore('store', {
+  state: () => ({
+    token: '' // 用户登录token
+  }),
+  getters: {},
+  actions: {},
+  // 状态持久化
+  persist: {
+    key: 'store',
+    storage: localStorage
+  }
+});

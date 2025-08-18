@@ -1,7 +1,9 @@
-# Vue 3 + Vite
+# 介绍
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+vue3 + vite + vue-router + pinia + element-plus 项目模板，支持自定义主题色，菜单按钮权限控制，左侧菜单根据权限数据生成、智能高亮、根据路由自动生成面包屑（支持自定义父级），版本更新提示，svg-icon组件，axios拦截
 
-## Recommended IDE Setup
+## 包管理工具pnpm
 
-- [VS Code](https://code.visualstudio.com/) + [Vue - Official](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (previously Volar) and disable Vetur
+pnpm i 
+pnpm run dev 
+pnpm run build 

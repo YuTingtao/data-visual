@@ -7,9 +7,9 @@
   "trailingComma": "none",
   "bracketSpacing": true,
   "bracketSameLine": true,
-  "jsxBracketSameLine": true,
   "arrowParens": "avoid",
   "vueIndentScriptAndStyle": false,
-  "endOfLine": "lf",
-  "embeddedLanguageFormatting": "auto"
+  "endOfLine": "auto",
+  "embeddedLanguageFormatting": "auto",
+  "singleAttributePerLine": false
 }

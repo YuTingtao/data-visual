@@ -29,9 +29,10 @@ i, em {
 img {
   border: none;
   vertical-align: top;
+  max-width: 100%;
 }
 
-img[src=''], img:not([src]) {
+img[src=""], img:not([src]) {
   opacity: 0;
 }
 
@@ -57,23 +58,23 @@ input::-moz-placeholder, textarea::-moz-placeholder {
   color: #c0c4cc;
   opacity: 1;
 }
-input:-ms-input-placeholder,
-textarea:-ms-input-placeholder {
+input:-ms-input-placeholder, textarea:-ms-input-placeholder {
   color: #c0c4cc;
 }
-input::-webkit-input-placeholder,
-textarea::-webkit-input-placeholder {
+input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
   color: #c0c4cc;
 }
 
 html, body {
   height: 100%;
+  -webkit-tap-highlight-color: transparent;
 }
 
 body {
-  font-family: 'Helvetica Neue', Helvetica, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', '微软雅黑', Arial, sans-serif;
+  font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
   font-size: 14px;
   color: #333;
+  word-wrap: break-word;
 }
 
 input, textarea, button, select {
@@ -92,7 +93,7 @@ button {
 }
 
 /* .clearfix {
-    *zoom: 1;
+  *zoom: 1;
 } */
 
 .clearfix:after {

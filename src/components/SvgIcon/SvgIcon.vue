@@ -5,10 +5,10 @@
 </template>
 
 <script setup>
-import { computed } from 'vue'
+import { computed } from 'vue';
 defineOptions({
   name: 'SvgIcon'
-})
+});
 
 const props = defineProps({
   name: {
@@ -26,11 +26,11 @@ const props = defineProps({
   prefix: {
     type: String,
     default: 'icon'
-  },
-})
+  }
+});
 const symbolId = computed(() => {
-  return `#${props.prefix}-${props.name}`
-})
+  return `#${props.prefix}-${props.name}`;
+});
 </script>
 
 <style lang="scss">
