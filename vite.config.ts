@@ -54,11 +54,15 @@ export default defineConfig({
             const dirName = __dirname.replace(/\\/g, '/');
             id = id.replace(dirName, '');
             if (id.includes('echarts')) {
-              return 'vendor-charts';
+              return 'echarts';
             } else if (id.includes('element-plus')) {
-              return 'vendor-element';
+              return 'element';
             }
             return 'vendor';
+          }
+          // 省级地图数据
+          if (id.includes('src/assets/map/province')) {
+            return 'provinceMaps';
           }
         },
         // 解决github: _plugin-vue_export-helper.js报404

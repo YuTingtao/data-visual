@@ -13,7 +13,7 @@ import 'virtual:svg-icons-register';
 // Echarts
 import { use as EchartsUse } from 'echarts/core';
 import { CanvasRenderer } from 'echarts/renderers';
-import { BarChart, LineChart, PieChart, MapChart } from 'echarts/charts';
+import { BarChart, LineChart, PieChart, MapChart, EffectScatterChart } from 'echarts/charts';
 import { GridComponent, TooltipComponent, LegendComponent, GeoComponent } from 'echarts/components';
 
 const app = createApp(App);
@@ -29,6 +29,7 @@ EchartsUse([
   LineChart,
   PieChart,
   MapChart,
+  EffectScatterChart,
   GridComponent,
   TooltipComponent,
   LegendComponent,
