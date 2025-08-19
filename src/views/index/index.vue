@@ -70,7 +70,7 @@ import MapChart from './components/MapChart.vue';
   flex-direction: column;
   width: 100%;
   height: 100%;
-  background: url('@/assets/img/bg_page.jpg') 50% 50% no-repeat;
+  background: #00093e url('@/assets/img/bg_page.jpg') 50% 50% no-repeat;
   background-size: cover;
 }
 

@@ -110,14 +110,17 @@ const option = ref({
   ]
 });
 
-// 点击，进入省级地图
+// 点击地图下转
 function onClick(params) {
   // console.log(params);
-  // 判断是否注册了省级地图
+  // 判断是否注册了地图
   if (getMap(params.name)) {
     option.value.geo.map = params.name;
     option.value.series[0].data = [];
-  } else {
+    return;
+  }
+  // 如果是中国地图，加载省级地图
+  if (option.value.geo.map === 'china') {
     import(`@/assets/map/province/${params.name}.json`).then(map => {
       registerMap(params.name, map.default);
       option.value.geo.map = params.name;
