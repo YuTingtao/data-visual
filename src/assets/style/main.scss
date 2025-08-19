@@ -1,5 +1,10 @@
 @import './reset.css';
 
+@font-face {
+  font-family: 'digitFont';
+  src: url('../font/DS-DIGIT.TTF') format('truetype');
+}
+
 body {
   --el-mask-color: rgba(0, 0, 0, 0.3);
 }
