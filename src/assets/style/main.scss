@@ -1,5 +1,9 @@
 @import './reset.css';
 
+body {
+  --el-mask-color: rgba(0, 0, 0, 0.3);
+}
+
 #app {
   height: 100%;
   background: #fff;

@@ -1,5 +1,5 @@
 <template>
-  <div v-loading.fullscreen="loading" element-loading-background="rgba(0, 0, 0, 0.3)" class="map-inner">
+  <div v-loading.fullscreen="loading" class="map-inner">
     <VChart ref="chartRef" :option="option" :autoresize="true" @click="onClick"></VChart>
     <span v-show="option.geo && option.geo?.map !== 'china'" class="map-back" @click="goBack">返回全国</span>
   </div>
