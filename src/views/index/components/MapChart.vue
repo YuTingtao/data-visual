@@ -41,6 +41,7 @@ const option = ref({
     left: '4%',
     right: '4%',
     bottom: '4%',
+    preserveAspect: true, // 保持被渲染的内容的原始包围盒的 aspect ratio
     label: {
       show: false,
       color: '#fff'
