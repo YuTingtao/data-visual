@@ -1,5 +1,5 @@
 <template>
-  <div class="map-inner">
+  <div v-loading.fullscreen="loading" element-loading-background="rgba(0, 0, 0, 0.3)" class="map-inner">
     <VChart ref="chartRef" :option="option" :autoresize="true" @click="onClick"></VChart>
     <span v-show="option.geo && option.geo?.map !== 'china'" class="map-back" @click="goBack">返回全国</span>
   </div>
@@ -110,6 +110,7 @@ const option = ref({
   ]
 });
 
+const loading = ref(false);
 // 点击地图下转
 function onClick(params) {
   // console.log(params);
@@ -121,7 +122,9 @@ function onClick(params) {
   }
   // 如果是中国地图，加载省级地图
   if (option.value.geo.map === 'china') {
+    loading.value = true;
     import(`@/assets/map/province/${params.name}.json`).then(map => {
+      loading.value = false;
       registerMap(params.name, map.default);
       option.value.geo.map = params.name;
       option.value.series[0].data = [];
