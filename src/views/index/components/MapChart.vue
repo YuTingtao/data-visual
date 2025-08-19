@@ -50,13 +50,13 @@ const option = ref({
       show: false
     },
     itemStyle: {
-      areaColor: 'rgba(43, 196, 243, 0.42)',
+      areaColor: 'rgba(43, 196, 243, 0.5)',
       borderColor: 'rgba(43, 196, 243, 1)',
       borderWidth: 1
     },
     emphasis: {
       itemStyle: {
-        areaColor: 'rgba(33, 205, 231, 1)'
+        areaColor: 'rgba(33, 205, 231, 0.8)'
       },
       label: {
         show: true,
@@ -69,7 +69,7 @@ const option = ref({
         color: '#fff'
       },
       itemStyle: {
-        areaColor: 'rgba(33, 205, 231, 1)'
+        areaColor: 'rgba(33, 205, 231, 0.8)'
       }
     }
   },

@@ -9,14 +9,14 @@ import VChart from 'vue-echarts';
 const chartRef = ref();
 
 const option = ref({
-  color: ['#006cff', '#60cda0', '#ed8884', '#ff9f7f', '#0096ff', '#9fe6b8'],
+  color: ['#1089E7', '#F57474', '#56D0E3', '#F8B448', '#8B78F6'],
   legend: {
     bottom: '0%',
-    itemWidth: 12,
-    itemHeight: 12,
+    itemWidth: 14,
+    itemHeight: 14,
     textStyle: {
-      color: 'rgba(255, 255, 255, .7)',
-      fontSize: 12
+      fontSize: 12,
+      color: 'rgba(255, 255, 255, 0.7)'
     }
   },
   tooltip: {
@@ -26,11 +26,8 @@ const option = ref({
     {
       name: '点位统计',
       type: 'pie',
-      radius: ['10%', '70%'],
       center: ['50%', '42%'],
-      roseType: 'radius',
-      top: '4%',
-      bottom: '10%',
+      radius: ['40%', '60%'],
       data: [
         { value: 30, name: '北京' },
         { value: 25, name: '上海' },
@@ -39,10 +36,10 @@ const option = ref({
       ],
       label: {
         fontSize: 12,
-        color: '#fff'
+        color: 'rgba(255, 255, 255, 0.9)'
       },
       labelLine: {
-        length: 10,
+        length: 15,
         length2: 10
       }
     }

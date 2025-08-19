@@ -154,8 +154,8 @@ import MapChart from './components/MapChart.vue';
 
 .map-box {
   position: relative;
-  flex-shrink: 0;
   flex-grow: 1;
+  overflow: hidden;
   .map-bg1,
   .map-bg2,
   .map-bg3 {

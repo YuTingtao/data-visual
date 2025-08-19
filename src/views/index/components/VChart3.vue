@@ -14,9 +14,9 @@ const option = ref({
     bottom: '0%',
     itemWidth: 14,
     itemHeight: 14,
-    data: ['20-29岁', '30-39岁', '40-49岁', '50岁以上'],
     textStyle: {
-      color: 'rgba(255, 255, 255, .7)'
+      fontSize: 12,
+      color: 'rgba(255, 255, 255, 0.7)'
     }
   },
   tooltip: {
@@ -28,16 +28,20 @@ const option = ref({
       type: 'pie',
       center: ['50%', '42%'],
       radius: ['40%', '60%'],
-      label: {
-        show: true,
-        color: 'rgba(255, 255, 255, .9)'
-      },
       data: [
         { value: 400, name: '20-29岁' },
         { value: 200, name: '30-39岁' },
         { value: 200, name: '40-49岁' },
         { value: 100, name: '50岁以上' }
-      ]
+      ],
+      label: {
+        fontSize: 12,
+        color: 'rgba(255, 255, 255, 0.9)'
+      },
+      labelLine: {
+        length: 15,
+        length2: 10
+      }
     }
   ]
 });
