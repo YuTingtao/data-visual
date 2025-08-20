@@ -92,5 +92,3 @@ const option = ref({
   ]
 });
 </script>
-
-<style lang="scss" scoped></style>

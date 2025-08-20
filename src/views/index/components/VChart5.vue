@@ -84,7 +84,7 @@ const option = ref({
             { offset: 0, color: 'rgba(1, 132, 213, 0.4)' },
             { offset: 1, color: 'rgba(1, 132, 213, 0.1)' }
           ],
-          global: false // 缺省为false
+          global: false
         }
       },
       data: [24, 40, 101, 134, 90, 230, 210, 230, 120, 230, 210, 120]
@@ -105,7 +105,7 @@ const option = ref({
             { offset: 0, color: 'rgba(0, 216, 135, 0.4)' },
             { offset: 1, color: 'rgba(0, 216, 135, 0.1)' }
           ],
-          global: false // 缺省为false
+          global: false
         }
       },
       data: [40, 64, 191, 324, 290, 330, 310, 213, 180, 200, 180, 79]
@@ -113,5 +113,3 @@ const option = ref({
   ]
 });
 </script>
-
-<style lang="scss" scoped></style>

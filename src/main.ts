@@ -5,7 +5,7 @@ import pinia from './store/createPinia.ts';
 
 // 公共样式
 import './assets/style/main.scss';
-import './utils/setHtmlRem.js';
+import './utils/flexible.js';
 // svg
 import SvgIcon from './components/svgIcon/SvgIcon.vue';
 import 'virtual:svg-icons-register';

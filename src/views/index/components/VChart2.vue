@@ -72,16 +72,44 @@ const option = ref({
       name: '新增粉丝',
       type: 'line',
       smooth: true,
+      areaStyle: {
+        // 区域渐变色
+        color: {
+          type: 'linear',
+          x: 0,
+          y: 0,
+          x2: 0,
+          y2: 1,
+          colorStops: [
+            { offset: 0, color: 'rgba(0, 246, 245, 0.4)' },
+            { offset: 1, color: 'rgba(0, 246, 245, 0.1)' }
+          ],
+          global: false
+        }
+      },
       data: [24, 40, 101, 134, 90, 230, 210, 230, 120, 230, 210, 120]
     },
     {
       name: '新增游客',
       type: 'line',
       smooth: true,
+      areaStyle: {
+        // 区域渐变色
+        color: {
+          type: 'linear',
+          x: 0,
+          y: 0,
+          x2: 0,
+          y2: 1,
+          colorStops: [
+            { offset: 0, color: 'rgba(255, 40, 23, 0.4)' },
+            { offset: 1, color: 'rgba(255, 40, 23, 0.1)' }
+          ],
+          global: false
+        }
+      },
       data: [40, 64, 191, 324, 290, 330, 310, 213, 180, 200, 180, 79]
     }
   ]
 });
 </script>
-
-<style lang="scss" scoped></style>

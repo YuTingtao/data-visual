@@ -10,15 +10,6 @@ const chartRef = ref();
 
 const option = ref({
   color: ['#1089E7', '#F57474', '#56D0E3', '#F8B448', '#8B78F6'],
-  legend: {
-    bottom: '0%',
-    itemWidth: 14,
-    itemHeight: 14,
-    textStyle: {
-      fontSize: 12,
-      color: 'rgba(255, 255, 255, 0.7)'
-    }
-  },
   tooltip: {
     trigger: 'item'
   },
@@ -26,7 +17,7 @@ const option = ref({
     {
       name: '年龄分布',
       type: 'pie',
-      center: ['50%', '42%'],
+      center: ['50%', '50%'],
       radius: ['40%', '60%'],
       data: [
         { value: 400, name: '20-29岁' },
@@ -36,7 +27,8 @@ const option = ref({
       ],
       label: {
         fontSize: 12,
-        color: 'rgba(255, 255, 255, 0.9)'
+        color: 'rgba(255, 255, 255, 0.9)',
+        formatter: '{b}: {d}%'
       },
       labelLine: {
         length: 15,
@@ -46,5 +38,3 @@ const option = ref({
   ]
 });
 </script>
-
-<style lang="scss" scoped></style>
