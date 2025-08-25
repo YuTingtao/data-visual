@@ -60,10 +60,6 @@ export default defineConfig({
             }
             return 'vendor';
           }
-          // 省级地图数据
-          if (id.includes('src/assets/map/province')) {
-            return 'provinceMaps';
-          }
         },
         // 解决github: _plugin-vue_export-helper.js报404
         sanitizeFileName(name) {
