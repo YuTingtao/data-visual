@@ -8,6 +8,7 @@
 <script setup>
 import { ref } from 'vue';
 import VChart from 'vue-echarts';
+import axios from 'axios';
 import { registerMap, getMap } from 'echarts/core';
 import chinaMap from '/public/map/china.json';
 
@@ -110,7 +111,6 @@ const option = ref({
   ]
 });
 
-const loading = ref(false);
 // 点击地图下钻
 function onClick(params) {
   // console.log(params);
@@ -122,14 +122,25 @@ function onClick(params) {
   }
   // 如果是中国地图，加载省级地图
   if (option.value.geo.map === 'china') {
-    loading.value = true;
-    import(`/public/map/province/${params.name}.json`).then(map => {
-      loading.value = false;
-      registerMap(params.name, map.default);
-      option.value.geo.map = params.name;
-      option.value.series[0].data = [];
-    });
+    loadMap(params.name);
   }
+}
+
+const loading = ref(false);
+
+// 加载地图
+function loadMap(name) {
+  loading.value = true;
+  axios
+    .get(`${import.meta.env.BASE_URL}/map/province/${name}.json`)
+    .then(res => {
+      registerMap(name, res.data);
+      option.value.geo.map = name;
+      option.value.series[0].data = [];
+    })
+    .finally(() => {
+      loading.value = false;
+    });
 }
 
 // 返回中国地图
