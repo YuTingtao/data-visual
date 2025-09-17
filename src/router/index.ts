@@ -7,7 +7,7 @@ const allRoutes: Array<RouteRecordRaw> = [
   }
 ];
 const router = createRouter({
-  history: createWebHistory(),
+  history: createWebHistory(import.meta.env.BASE_URL),
   routes: allRoutes,
   scrollBehavior(to, from) {
     if (to.hash) {
