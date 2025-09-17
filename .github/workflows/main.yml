@@ -15,8 +15,15 @@ jobs:
       - name: Checkout  ️
         uses: actions/checkout@v3
 
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '22' # 使用你需要的 Node.js 版本
+          cache: 'pnpm' # 使用 pnpm 的缓存
+
       - name: Install and Build # 安装依赖、打包，如果提前已打包好无需这一步
         run: |
+          npm install -g pnpm@latest # 安装最新版本的 pnpm
           pnpm install
           pnpm run build
 
