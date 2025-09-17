@@ -131,13 +131,17 @@ const loading = ref(false);
 // 加载地图
 function loadMap(name) {
   loading.value = true;
-  axios.get(`${import.meta.env.BASE_URL}./map/province/${name}.json`).then(res => {
-    registerMap(name, res.data);
-    option.value.geo.map = name;
-    option.value.series[0].data = [];
-  }).finally(() => {
-    loading.value = false;
-  });
+  const baseUrl = import.meta.env.BASE_URL === '/' ? '.' : import.meta.env.BASE_URL;
+  axios
+    .get(`${baseUrl}/map/province/${name}.json`)
+    .then(res => {
+      registerMap(name, res.data);
+      option.value.geo.map = name;
+      option.value.series[0].data = [];
+    })
+    .finally(() => {
+      loading.value = false;
+    });
 }
 
 // 返回中国地图
