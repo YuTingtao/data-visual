@@ -39,10 +39,10 @@ export default defineConfig({
     }
   },
   // 公共基础路径
-  base: '/data-visual',
+  base: './',
   // 打包配置
   build: {
-    outDir: 'docs', // 打包输出目录
+    outDir: 'dist', // 打包输出目录
     target: ['chrome87', 'edge88', 'firefox78', 'safari14'],
     rollupOptions: {
       output: {

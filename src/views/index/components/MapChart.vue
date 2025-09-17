@@ -132,7 +132,7 @@ const loading = ref(false);
 function loadMap(name) {
   loading.value = true;
   axios
-    .get(`${import.meta.env.BASE_URL}/map/province/${name}.json`)
+    .get(`${import.meta.env.BASE_URL}./map/province/${name}.json`)
     .then(res => {
       registerMap(name, res.data);
       option.value.geo.map = name;
